@@ -1,0 +1,303 @@
+<html>
+
+<head>
+    <style>
+        @font-face {
+            font-family: Avenir;
+            src: url('LT.ttf');
+        }
+
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: Avenir;
+            width: 210mm;
+        }
+
+        body {
+            margin-left: 20;
+        }
+
+        #hinweis {
+            font-style: italic;
+            padding-right: 5%;
+            font-size: 9pt;
+            margin-top: 0.3cm;
+            float: right;
+        }
+
+        .h1 {
+            margin-left: 3.9%;
+            font-size: 11pt;
+        }
+
+            .h1 > img {
+                height: 9pt;
+                margin-right: 0.5%;
+            }
+
+        .uh1 {
+            margin: 0;
+            margin-left: 6.1%;
+            margin-bottom: 0.5cm;
+            font-size: 9pt;
+        }
+
+        .h2 {
+            font-size: 10pt;
+            margin-left: 7.1%;
+            margin-top: 0.8cm;
+        }
+
+            .h2 > img {
+                height: 8pt;
+                margin-right: 0.5%;
+            }
+
+        .uh2 {
+            margin: 0;
+            font-size: 9pt;
+            margin-left: 9.7%;
+            margin-bottom: 0.5cm;
+        }
+
+        .wrapper {
+            margin-left: 6.5%;
+            overflow: hidden;
+        }
+
+        .lines {
+            border-left: 1px solid black;
+            height: inherit;
+            min-height: 60px;
+            border-top: 1px solid black;
+            width: 20px;
+            float: left;
+            margin-right: 0.2cm;
+        }
+
+        .lines2 {
+            border-left: 1px solid black;
+            height: inherit;
+            min-height: 150px;
+            border-top: 1px solid black;
+            width: 20px;
+            float: left;
+            margin-right: 0.2cm;
+        }
+
+        table {
+            overflow: hidden;
+            font-size: 8pt;
+        }
+
+        th {
+            font-size: 8pt;
+            font-weight: bold;
+            text-align: left;
+            height: 1cm;
+            vertical-align: top;
+            padding-left: 5pt;
+        }
+
+        td {
+            vertical-align: top;
+            padding-left: 5pt;
+        }
+
+        .uth {
+            font-size: 6pt;
+            font-weight: bold;
+            text-align: left;
+            margin: 0;
+        }
+
+        #tbl_zeugnis {
+            width: 50%;
+            table-layout: fixed;
+        }
+
+        #tbl_artikeldaten {
+            width: 80%;
+        }
+
+        #tbl_abschrift {
+            width: 50%;
+        }
+
+        #tbl_werkstoff {
+            width: 95%;
+            table-layout: fixed;
+            margin-bottom: 0.8cm;
+        }
+
+        #tbl2_werkstoff {
+            width: 95%;
+            margin-bottom: 1cm;
+        }
+
+        #tbl3_werkstoff {
+            width: 50%;
+            margin-bottom: 0.25cm;
+            table-layout: fixed;
+        }
+
+        .abstand {
+            height: 1cm;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!--Zeugnis---------------------------->
+    <div class="h1"><img src="img_Pfeil.png">Abnahmeprüfzeugnis EN 10204-3.1</div>
+    <p class="uh1">inspection certificate EN 10204-3.1</p>
+    <div class="wrapper">
+        <div class="lines"></div>
+        <table id="tbl_zeugnis">
+            <tr>
+                <th>Zeugnis Nr.<p class="uth">certificate no.</p>
+                </th>
+                <th>Bestell Nr.<p class="uth">order no.</p>
+                </th>
+                <th>Besteller<p class="uth">customer</p>
+                </th>
+            </tr>
+            <tr>
+                <td>[ApzInhalt_ZeugnisNr]</td>
+                <td>[ApzInhalt_BestellNr]</td>
+                <td>[ApzInhalt_Besteller]</td>
+            </tr>
+        </table>
+    </div>
+    <!--Artikeldaten---------------------------->
+    <div class="h2"><img src="img_DoppelPfeil.PNG">Artikeldaten</div>
+    <p class="uh2">item data</p>
+    <div class="wrapper">
+        <div class="lines"></div>
+        <table id="tbl_artikeldaten">
+            <tr>
+                <th>Menge<p class="uth">quantity</p>
+                </th>
+                <th>Bezeichnung / Abmessung<p class="uth">Designation / dimenstion</p>
+                </th>
+                <th>Werkstoff<p class="uth">Material</p>
+                </th>
+                <th>Chargen-Nr.<p class="uth">Heat no.</p>
+                </th>
+            </tr>
+            <tr>
+                <td>[ApzInhalt_Menge]</td>
+                <td>[ApzInhalt_Bezeichnung]</td>
+                <td>[ApzInhalt_Werkstoff]</td>
+                <td>[ApzInhalt_ChargenNr]</td>
+            </tr>
+        </table>
+    </div>
+    <!--Abschrift---------------------------->
+    <div class="h2"><img src="img_DoppelPfeil.PNG">Abschrift (auszugsweise) vom APZ 3.1 des Herstellers</div>
+    <p class="uh2">copy of APZ 3.1 from pre-material supplier in extracts</p>
+    <div class="wrapper">
+        <div class="lines"></div>
+        <table id="tbl_abschrift">
+            <tr>
+                <th>Kennzeichnung<p class="uth">marking</p>
+                </th>
+                <th>Bemerkungen<p class="uth">comments</p>
+                </th>
+            </tr>
+            <tr>
+                <td><img height="30px" src="img_kennzeichnung.png"></td>
+                <td>kaltgeformt und spanend gefertigt</td>
+            </tr>
+        </table>
+    </div>
+    <!--Werkstoff---------------------------->
+    <div class="h2"><img src="img_DoppelPfeil.PNG">werkstoff-gütenachweis und mechanisch-technologische Prüfung des
+        Einsatzrohres</div>
+    <p class="uh2">certificate and mech.-technological test of base material</p>
+    <div class="wrapper">
+        <div class="lines2"></div>
+        <table id="tbl_werkstoff">
+            <tr>
+                <th>Analyse<p class="uth">analysis</p>
+                </th>
+                <th>C</th>
+                <th>Sl</th>
+                <th>Mn</th>
+                <th>P</th>
+                <th>S</th>
+                <th>Cr</th>
+                <th>Ni</th>
+                <th>Mo</th>
+                <th>Ti</th>
+                <th>N</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>[ApzInhalt_C]</td>
+                <td>[ApzInhalt_Sl]</td>
+                <td>[ApzInhalt_Mn]</td>
+                <td>[ApzInhalt_P]</td>
+                <td>[ApzInhalt_S]</td>
+                <td>[ApzInhalt_Cr]</td>
+                <td>[ApzInhalt_Ni]</td>
+                <td>[ApzInhalt_Mo]</td>
+                <td>[ApzInhalt_Ti]</td>
+                <td>[ApzInhalt_N]</td>
+            </tr>
+        </table>
+        <table id="tbl2_werkstoff">
+            <tr>
+                <th>Proben Nr.<p class="uth">test no.</p>
+                </th>
+                <th>Rp0,2<p class="uth">[N/mm<sup>2</sup>]</p>
+                </th>
+                <th>Rp1,0<p class="uth">[N/mm<sup>2</sup>]</p>
+                </th>
+                <th>Rm<p class="uth">[N/mm<sup>2</sup>]</p>
+                </th>
+                <th>A5<p class="uth">%</p>
+                </th>
+                <th>ik-test EN ISO 3651-2/A<p class="uth">ik-test acc. EN ISO 3651-2/A</p>
+                </th>
+                <th>Verwechslungsprüf.: 100% spektral<p class="uth">material type check: 100 spectral</p>
+                </th>
+            </tr>
+            <tr>
+                <td>[ApzInhalt_ProbenNr]</td>
+                <td>[ApzInhalt_Rp02]</td>
+                <td>[ApzInhalt_Rp10]</td>
+                <td>[ApzInhalt_Rm]</td>
+                <td>[ApzInhalt_A5]</td>
+                <td>Ohne Beanstandung</td>
+                <td>Ohne Beanstandung</td>
+            </tr>
+        </table>
+        <div class="lines"></div>
+        <table id="tbl3_werkstoff">
+            <tr>
+                <th>Anforderungen<p class="uth">requirements</p>
+                </th>
+                <th>Zeugnisdatum<p class="uth">certification date</p>
+                </th>
+                <th>Werksachverständiger<p class="uth">works inspector</p>
+                </th>
+            </tr>
+            <tr>
+                <td>erfüllt</td>
+                <td>[ApzInhalt_Zeugnisdatum]</td>
+                <td>Patrick Rohmer</td>
+            </tr>
+        </table>
+    </div>
+    <!--Hinweis---------------------------->
+    <p id="hinweis">
+        das schreiben wurde maschinell erstellt und ist auch ohne Unterschrift gültig<br>
+        this certificate is computer aided created and valid without a signature
+    </p>
+</body>
+
+</html>

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
+using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
 
 namespace WinFormsWebViewBug
 {
@@ -15,6 +11,23 @@ namespace WinFormsWebViewBug
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var uri = new Uri(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) +
+                              @"\assets\APZ\indexHtmlFragment.html");
+            webView1.NavigateToLocalStreamUri(uri, new CustomUriToStreamResolver());
+        }
+    }
+
+    internal class CustomUriToStreamResolver
+        : IUriToStreamResolver
+    {
+        public Stream UriToStream(Uri uri)
+        {
+            var stream = new FileStream(uri.AbsolutePath, FileMode.Open);
+            return stream;
         }
     }
 }
